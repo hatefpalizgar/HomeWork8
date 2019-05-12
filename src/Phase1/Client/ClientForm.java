@@ -4,9 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
+import static Phase1.Client.Main.socketHandler;
+
 
 public class ClientForm{
-    private SocketHandler socketHandler;
     // Generated using JFormDesigner Evaluation license - Hatef
     private JFrame        frame;
     private JScrollPane   scrollPane1;
@@ -18,15 +19,18 @@ public class ClientForm{
     //constructor
     public ClientForm(){
         initComponents();
-        socketHandler = new SocketHandler();
-        socketHandler.establishConnection();
-        
-    }//End of constructor
+    }
+    
+    //End of constructor
     
     // Send button clicked
     private void btnSendActionPerformed(ActionEvent e){
-        //TODO write to client text field +
-        socketHandler.sendMessage(getTxtInput().getText());
+        try{
+            socketHandler.sendMessage(getTxtInput().getText());
+        } catch(Exception ex){
+            ex.printStackTrace();
+            this.getTxtLog().append("Error: check your connection with server");
+        }
     }
     
     private void initComponents(){
@@ -86,6 +90,7 @@ public class ClientForm{
         this.frame.setLocationRelativeTo(this.frame.getOwner());
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
+    
     public void display(String string){
         this.getTxtLog().append(string + "\n");
     }
