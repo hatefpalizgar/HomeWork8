@@ -23,7 +23,7 @@ class SocketHandler {
             bw.flush();
             clientForm.display("Me: " + string + "\n");
         } catch (Exception e) {
-            clientForm.display("Error sending message to server ");
+            clientForm.display("Error sending message to server, check your connection\n ");
         }
         
     }
@@ -38,13 +38,13 @@ class SocketHandler {
             reader = new InputStreamReader(is);
             br = new BufferedReader(reader);
             String message;
-            if((br.read())!= -1){
+            if (is.available() != 0) {
                 message = br.readLine();
                 clientForm.display("Server: " + message + "\n");
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("no line to read from server");
+            System.out.println("no line to read from server\n");
         }
         
     }
@@ -55,7 +55,7 @@ class SocketHandler {
             if (server == null) {
                 server = new Socket("10.211.55.4", 46857); //server ip: 10.211.55.4  port:46857
                 clientForm.display(
-                        "Connected to server: " + server.getLocalAddress() + " port:" + server.getLocalPort() +
+                        "Connected to server: " + server.getLocalAddress().toString() + " port:" + server.getLocalPort() +
                         "\n");
             }
             

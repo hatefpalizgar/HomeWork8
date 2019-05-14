@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b1c4d87-29e5-479b-aa88-340577e1471b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/render.experimental.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChatClient.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ChatClient.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ChatClient/META-INF/ChatClient.kotlin_module" beforeDir="false" />
@@ -45,13 +47,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Phase1/Client/ClientForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="26" column="56" lean-forward="true" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
+            <state relative-caret-position="544">
+              <caret line="65" column="69" lean-forward="true" selection-start-line="65" selection-start-column="69" selection-end-line="65" selection-end-column="69" />
               <folding>
-                <element signature="method#initComponents#0;class#ClientForm#0" />
                 <element signature="method#setTxtLog#0;class#ClientForm#0" />
                 <element signature="method#setTxtInput#0;class#ClientForm#0" />
                 <element signature="method#getBtnSend#0;class#ClientForm#0" />
@@ -61,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Phase1/Client/SocketHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+            <state relative-caret-position="317">
+              <caret line="57" column="120" selection-start-line="57" selection-start-column="120" selection-end-line="57" selection-end-column="120" />
             </state>
           </provider>
         </entry>
@@ -100,8 +101,8 @@
         <option value="$PROJECT_DIR$/src/Phase1/Client/frmo/ClientForm2.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/Phase1/Client/Main.java" />
-        <option value="$PROJECT_DIR$/src/Phase1/Client/ClientForm.java" />
         <option value="$PROJECT_DIR$/src/Phase1/Client/SocketHandler.java" />
+        <option value="$PROJECT_DIR$/src/Phase1/Client/ClientForm.java" />
       </list>
     </option>
   </component>
@@ -235,12 +236,12 @@
       <workItem from="1557817167452" duration="749000" />
       <workItem from="1557817977572" duration="422000" />
       <workItem from="1557818440566" duration="43000" />
-      <workItem from="1557818505216" duration="2347000" />
+      <workItem from="1557818505216" duration="3824000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60001000" />
+    <option name="totallyTimeSpent" value="61478000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -253,13 +254,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1650" height="1027" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Image Layers" order="4" />
-      <window_info auto_hide="true" content_ui="combo" x="320" y="54" width="247" height="740" id="Project" internal_type="SLIDING" order="5" sideWeight="0.49566725" weight="0.17784877" />
+      <window_info auto_hide="true" content_ui="combo" x="320" y="54" width="247" height="740" id="Project" internal_type="SLIDING" order="5" sideWeight="0.49566725" weight="0.1772388" />
       <window_info id="Structure" order="6" sideWeight="0.5043328" side_tool="true" weight="0.17704518" />
       <window_info id="Persistence" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Inspection Results" order="0" weight="0.3281893" />
@@ -268,12 +270,12 @@
       <window_info anchor="bottom" auto_hide="true" id="Terminal" internal_type="SLIDING" order="3" type="SLIDING" weight="0.32901832" />
       <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.50061053" side_tool="true" weight="0.32921347" />
       <window_info anchor="bottom" id="Database Changes" order="5" show_stripe_button="false" weight="0.32921347" />
-      <window_info active="true" anchor="bottom" auto_hide="true" id="Version Control" order="6" sideWeight="0.4993895" visible="true" weight="0.3272727" />
+      <window_info anchor="bottom" auto_hide="true" id="Version Control" order="6" sideWeight="0.4993895" weight="0.3272727" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.3277623" />
       <window_info anchor="bottom" id="Message" order="9" />
       <window_info anchor="bottom" id="Find" order="10" weight="0.32892805" />
-      <window_info anchor="bottom" auto_hide="true" id="Run" internal_type="SLIDING" order="11" weight="0.31764707" />
+      <window_info active="true" anchor="bottom" auto_hide="true" id="Run" internal_type="SLIDING" order="11" visible="true" weight="0.31764707" />
       <window_info anchor="bottom" auto_hide="true" id="Debug" order="12" weight="0.3444754" />
       <window_info anchor="bottom" id="Cvs" order="13" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="14" weight="0.4" />
@@ -628,24 +630,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Phase1/Client/SocketHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="57" column="120" selection-start-line="57" selection-start-column="120" selection-end-line="57" selection-end-column="120" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Phase1/Client/ClientForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="26" column="56" lean-forward="true" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
+        <state relative-caret-position="544">
+          <caret line="65" column="69" lean-forward="true" selection-start-line="65" selection-start-column="69" selection-end-line="65" selection-end-column="69" />
           <folding>
-            <element signature="method#initComponents#0;class#ClientForm#0" />
             <element signature="method#setTxtLog#0;class#ClientForm#0" />
             <element signature="method#setTxtInput#0;class#ClientForm#0" />
             <element signature="method#getBtnSend#0;class#ClientForm#0" />
             <element signature="method#setBtnSend#0;class#ClientForm#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Phase1/Client/SocketHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
         </state>
       </provider>
     </entry>
