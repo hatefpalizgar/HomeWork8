@@ -28,7 +28,7 @@ public class ClientForm {
     // Send button clicked
     private void btnSendActionPerformed(ActionEvent e) {
         //refresh log window first
-       socketHandler.getMessage();
+        socketHandler.getMessage();
         //Now send the message to server
         socketHandler.sendMessage(txtInput.getText());
         
@@ -47,15 +47,16 @@ public class ClientForm {
         this.frame.setTitle("Client");
         this.frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         Container ClientFormContentPane = this.frame.getContentPane();
-        this.frame.addMouseMotionListener(new MouseMotionListener(){
+        this.frame.addMouseMotionListener(new MouseMotionListener() {
             @Override
-            public void mouseDragged(MouseEvent e){
+            public void mouseDragged(MouseEvent e) {
             }
-        
+            
             @Override
-            public void mouseMoved(MouseEvent e){
+            public void mouseMoved(MouseEvent e) {
                 socketHandler.getMessage();
-            }});
+            }
+        });
         
         this.txtLog.setEditable(false);
         this.scrollPane1.setViewportView(this.txtLog);

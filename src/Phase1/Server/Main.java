@@ -13,6 +13,7 @@ public class Main{
                 try{
                     serverForm.getFrame().setVisible(true);
                     serverForm.display("Waiting for client.....\n");
+                    
                 } catch(Exception e){
                     e.printStackTrace();
                 }

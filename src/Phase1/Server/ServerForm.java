@@ -2,9 +2,7 @@ package Phase1.Server;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
+import java.awt.event.*;
 
 import static Phase1.Server.Main.socketHandler;
 
@@ -16,14 +14,9 @@ public class ServerForm extends JFrame{
     
     // Send button clicked
     private void btnSendActionPerformed(ActionEvent e){
-        try{
-            // TODO socketHandler.getMessage();
-            socketHandler.startServer();
+            socketHandler.getMessage();
             socketHandler.sendMessage(txtInput.getText());
-        } catch(Exception ex){
-            ex.printStackTrace();
-            this.getTxtLog().append("Error: check your connection with client\n");
-        }
+      
     }
     
     private void initComponents(){
@@ -38,6 +31,16 @@ public class ServerForm extends JFrame{
         this.frame.setTitle("Server");
         this.frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         Container ClientFormContentPane = this.frame.getContentPane();
+        this.frame.addMouseMotionListener(new MouseMotionListener(){
+            @Override
+            public void mouseDragged(MouseEvent e){
+            }
+    
+            @Override
+            public void mouseMoved(MouseEvent e){
+            socketHandler.getMessage();
+            }
+        });
         this.txtLog.setEditable(false);
         this.scrollPane1.setViewportView(this.txtLog);
         this.btnSend.setText("Send");
@@ -67,6 +70,7 @@ public class ServerForm extends JFrame{
             @Override
             public void windowActivated(WindowEvent e){
                 socketHandler.startServer();
+               
             }
             
             @Override

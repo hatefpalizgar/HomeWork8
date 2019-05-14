@@ -16,21 +16,25 @@ class SocketHandler{
     BufferedReader     br;
     BufferedWriter     bw;
     OutputStreamWriter writer;
-    boolean            direction;
     
-    public void sendMessage(String string) throws Exception{
+    public void sendMessage(String string){
         if(s.isClosed()){
             serverForm.display("client disconnected\n");
             return;
         }
         writer = new OutputStreamWriter(os);
         bw = new BufferedWriter(writer);
-        bw.write(string + "\n");
-        bw.flush();
-        serverForm.display("Me: " + string + "\n");
+        try{
+            bw.write(string + "\n");
+            serverForm.display("Me: " + string + "\n");
+            bw.flush();
+        } catch(IOException e){
+            e.printStackTrace();
+            serverForm.getTxtLog().setText ("Client Not Available");
+        }
     }
     
-    public void getMessage() throws Exception{
+    public void getMessage(){
         if(s.isClosed()){
             serverForm.display("client disconnected\n");
             return;
@@ -38,8 +42,11 @@ class SocketHandler{
         try{
             reader = new InputStreamReader(is);
             br = new BufferedReader(reader);
-            String message = br.readLine();
-            serverForm.display("Client: " + message + "\n");
+            String message ;
+            if(is.available() != 0){
+                message = br.readLine();
+                serverForm.display("Client: " + message + "\n");
+            }
         } catch(IOException e){
             e.printStackTrace();
             System.out.println("no line to read from client");
@@ -63,6 +70,38 @@ class SocketHandler{
             e.printStackTrace();
             return false;
         }
+    }
+    
+    public Socket getS(){
+        return s;
+    }
+    
+    public ServerSocket getServer(){
+        return server;
+    }
+    
+    public OutputStream getOs(){
+        return os;
+    }
+    
+    public InputStream getIs(){
+        return is;
+    }
+    
+    public InputStreamReader getReader(){
+        return reader;
+    }
+    
+    public BufferedReader getBr(){
+        return br;
+    }
+    
+    public BufferedWriter getBw(){
+        return bw;
+    }
+    
+    public OutputStreamWriter getWriter(){
+        return writer;
     }
 }
 

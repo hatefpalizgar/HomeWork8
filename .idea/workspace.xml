@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b1c4d87-29e5-479b-aa88-340577e1471b" name="Default Changelist" comment="add SocketHandler class">
-      <change afterPath="$PROJECT_DIR$/src/Phase1/Server/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Phase1/Server/ServerForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Phase1/Server/SocketHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ChatClient/Phase1/Client/ClientForm.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ChatClient/Phase1/Client/Main$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ChatClient/Phase1/Client/Main.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Phase1/Client/ClientForm.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Phase1/Client/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Phase1/Server/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Phase1/Server/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Phase1/Server/ServerForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Phase1/Server/ServerForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Phase1/Server/SocketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Phase1/Server/SocketHandler.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,8 +53,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Phase1/Server/ServerForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+            <state relative-caret-position="200">
+              <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+              <folding>
+                <element signature="class#1322:2128" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -62,8 +65,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Phase1/Server/SocketHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+            <state relative-caret-position="288">
+              <caret line="48" column="13" lean-forward="true" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -96,15 +99,16 @@
         <option value="$PROJECT_DIR$/src/Phase1/Client/Main.java" />
         <option value="$PROJECT_DIR$/src/Phase1/Client/ServerForm.java" />
         <option value="$PROJECT_DIR$/src/Phase1/Server/Main.java" />
-        <option value="$PROJECT_DIR$/src/Phase1/Server/ServerForm.java" />
         <option value="$PROJECT_DIR$/src/Phase1/Server/SocketHandler.java" />
+        <option value="$PROJECT_DIR$/src/Phase1/Server/ServerForm.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="118" />
-    <option name="width" value="950" />
-    <option name="height" value="828" />
+    <option name="x" value="960" />
+    <option name="y" value="27" />
+    <option name="width" value="960" />
+    <option name="height" value="1104" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -114,23 +118,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="ChatClient" type="58d84e3e:PackageViewProjectNode" />
-              <item name="ChatClient" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="ChatClient" type="58d84e3e:PackageViewProjectNode" />
-              <item name="ChatClient" type="616d4139:PackageViewModuleNode" />
-              <item name="Phase1.Client" type="1f31426a:PackageElementNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="ProjectPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Production'; set:Production; class com.intellij.psi.search.scope.ProjectProductionScope">
           <expand>
@@ -176,6 +163,41 @@
             <path>
               <item name="ChatClient" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="ChatClient" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="out" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="ChatClient" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="ChatClient" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="out" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="production" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="ChatClient" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="ChatClient" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="out" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="production" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="ChatClient" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="ChatClient" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="ChatClient" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="out" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="production" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="ChatClient" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Phase1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="ChatClient" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="ChatClient" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="out" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="production" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="ChatClient" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Phase1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="ChatClient" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="ChatClient" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
@@ -190,6 +212,31 @@
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="Phase1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="Server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="ChatClient" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="ChatClient" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Phase1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="SocketHandler" type="1a9f42e2:ClassTreeNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane" />
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ChatClient" type="58d84e3e:PackageViewProjectNode" />
+              <item name="ChatClient" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="ChatClient" type="58d84e3e:PackageViewProjectNode" />
+              <item name="ChatClient" type="616d4139:PackageViewModuleNode" />
+              <item name="Phase1.Client" type="1f31426a:PackageElementNode" />
             </path>
           </expand>
           <select />
@@ -273,22 +320,40 @@
       <workItem from="1557731476317" duration="263000" />
       <workItem from="1557732221593" duration="22048000" />
       <workItem from="1557783059575" duration="10859000" />
-      <workItem from="1557808806539" duration="573000" />
+      <workItem from="1557808806539" duration="14163000" />
     </task>
+    <task id="LOCAL-00001" summary="add SocketHandler class">
+      <created>1557809587834</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1557809587834</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55260000" />
+    <option name="totallyTimeSpent" value="68850000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1920" height="1104" extended-state="6" />
+    <frame x="0" y="27" width="1650" height="954" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" auto_hide="true" content_ui="combo" x="320" y="54" width="247" height="740" id="Project" internal_type="SLIDING" order="5" sideWeight="0.49566725" visible="true" weight="0.16684435" />
+      <window_info auto_hide="true" content_ui="combo" x="320" y="54" width="247" height="740" id="Project" internal_type="SLIDING" order="5" sideWeight="0.49566725" weight="0.16684435" />
       <window_info id="Structure" order="6" sideWeight="0.5043328" side_tool="true" weight="0.17704518" />
       <window_info id="Persistence" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Inspection Results" order="0" weight="0.32917213" />
@@ -302,11 +367,11 @@
       <window_info anchor="bottom" auto_hide="true" id="Messages" order="8" weight="0.327852" />
       <window_info anchor="bottom" id="Message" order="9" />
       <window_info anchor="bottom" id="Find" order="10" weight="0.3286424" />
-      <window_info anchor="bottom" auto_hide="true" id="Run" internal_type="SLIDING" order="11" weight="0.2507708" />
-      <window_info anchor="bottom" auto_hide="true" id="Debug" order="12" weight="0.39979446" />
+      <window_info active="true" anchor="bottom" auto_hide="true" id="Run" internal_type="SLIDING" order="11" visible="true" weight="0.27339002" />
+      <window_info anchor="bottom" auto_hide="true" id="Debug" order="12" weight="0.20143884" />
       <window_info anchor="bottom" id="Cvs" order="13" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="14" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="15" weight="0.32901832" />
+      <window_info anchor="bottom" id="TODO" order="15" weight="0.32887974" />
       <window_info anchor="bottom" id="JFormDesigner Error Log" order="16" weight="0.20449439" />
       <window_info anchor="bottom" id="Database Console" order="17" weight="0.32921347" />
       <window_info anchor="bottom" id="Spring" order="18" weight="0.32901832" />
@@ -382,6 +447,16 @@
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
+        <expression-string>br.readLine()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>message = br.readLine()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>this.getTxtInput().getText()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -426,17 +501,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///usr/java/java-se-8u40-ri/src.zip!/java/net/Socket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="1610" selection-start-line="1610" selection-end-line="1610" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/java/java-se-8u40-ri/src.zip!/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/java/java-se-8u40-ri/jre/lib/rt.jar!/sun/nio/cs/StreamDecoder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4510">
+          <caret line="205" column="48" selection-start-line="205" selection-start-column="48" selection-end-line="205" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/java/java-se-8u40-ri/src.zip!/java/io/Reader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/java/java-se-8u40-ri/src.zip!/java/io/BufferedReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="180" selection-start-line="180" selection-end-line="180" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/java/java-se-8u40-ri/src.zip!/java/lang/ClassLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="356" selection-start-line="356" selection-end-line="356" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/java/java-se-8u40-ri/src.zip!/java/io/InputStreamReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Phase1/Server/ServerForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+        <state relative-caret-position="200">
+          <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+          <folding>
+            <element signature="class#1322:2128" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Phase1/Server/SocketHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+        <state relative-caret-position="288">
+          <caret line="48" column="13" lean-forward="true" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
         </state>
       </provider>
     </entry>
