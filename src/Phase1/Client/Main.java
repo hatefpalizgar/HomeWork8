@@ -3,21 +3,24 @@ package Phase1.Client;
 import java.awt.*;
 
 
-public class Main{
-    public static  ClientForm clientForm;
-    public static SocketHandler socketHandler;
-    public static void main(String[] args){
-        EventQueue.invokeLater(new Runnable(){
-            public void run(){
-                try{
+public class Main {
+    public static ClientForm    clientForm = new ClientForm();
+    public static SocketHandler socketHandler = new SocketHandler();
+    
+    public static void main(String[] args) {
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
                     clientForm = new ClientForm();
                     clientForm.getFrame().setVisible(true);
-                    socketHandler = new SocketHandler();
+                    clientForm.display("Connecting to server.....\n");
                     socketHandler.establishConnection();
-                } catch(Exception e){
+    
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         });
+        
     }
 }
