@@ -27,6 +27,8 @@ public class ClientForm {
     
     // Send button clicked
     private void btnSendActionPerformed(ActionEvent e) {
+        Thread newThread = socketHandler;
+        newThread.start();
         //refresh log window first
         socketHandler.getMessage();
         //Now send the message to server

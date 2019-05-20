@@ -7,7 +7,7 @@ import java.net.Socket;
 import static Phase1.Server.Main.serverForm;
 
 
-class SocketHandler{
+class SocketHandler extends Thread{
     Socket             s;
     ServerSocket       server;
     OutputStream       os;
@@ -70,6 +70,12 @@ class SocketHandler{
             e.printStackTrace();
             return false;
         }
+    }
+    
+    @Override
+    public void run() {
+        //TODO
+        
     }
     
     public Socket getS(){

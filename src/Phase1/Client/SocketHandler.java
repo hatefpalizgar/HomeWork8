@@ -6,13 +6,18 @@ import java.net.Socket;
 import static Phase1.Client.Main.clientForm;
 
 
-class SocketHandler {
+class SocketHandler extends Thread{
     private static Socket server;
     InputStream       is;
     OutputStream      os;
     InputStreamReader reader;
     BufferedReader    br;
     
+    
+    @Override
+    public void run() {
+        establishConnection();
+    }
     
     public void sendMessage(String string) {
         
