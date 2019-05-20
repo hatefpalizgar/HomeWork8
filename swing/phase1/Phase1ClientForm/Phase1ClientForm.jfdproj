@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <node name="javacodegenerator">
+    <entry key="_generalSettingsEnabled" value="true" />
+    <entry key="_templatesSettingsEnabled" value="true" />
+    <entry key="comments" value="false" />
+    <entry key="containerblocks" value="false" />
+    <entry key="membervariablethis" value="true" />
+    <node name="templates">
+      <entry key="_component_binding_initialization.template" value="private void initComponentBindings() {\n\t\n}" />
+      <entry key="_component_i18n_initialization.template" value="private void initComponentsI18n() {\n\t// Component initialization \n\t// End of component initialization\n}\n" />
+      <entry key="_header.template" value="" />
+      <entry key="_variables_declaration.template" value="" />
+      <entry key="javax.swing.AbstractAction.template" value="import java.awt.event.ActionEvent;\n\n${modifiers}class ${class_name} ${extends_declaration} {\n\t${constructor_modifiers}${class_name}() {\n\n\t}\n\n\tpublic void actionPerformed(ActionEvent e) {\n\t\t// TODO add your code here\n\t}\n}\n" />
+    </node>
+  </node>
+</project>
+

@@ -1,0 +1,36 @@
+JFDML JFormDesigner: "6.0.6.0.190" Java: "1.8.0_191" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {par l {seq l {space :p:280:p, comp scrollPane2:::p::p}, seq l {space :p:45:p, par l {seq {comp txtInput:::p:428:p, space s:::p, comp btnSend:::::x}, comp scrollPane1:::p:587:p}}}, space ::81:x}}"
+			"$verticalGroup": "par l {seq l {space :p:41:p, comp scrollPane1:::p:395:p, space ::19:x, par b {comp txtInput::b:p:44:p, comp btnSend::b:p:51:p}, space :::p, comp scrollPane2:::p::p, space :p:22:p}}"
+		} ) {
+			name: "ClientForm"
+			"title": "Client"
+			"defaultCloseOperation": 3
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTextArea" ) {
+					name: "txtLog"
+					"editable": false
+					"text": "Connecting to server,,,,"
+				} )
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane2"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "txtInput"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnSend"
+				"text": "Send"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 715, 575 )
+		} )
+	}
+}
