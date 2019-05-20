@@ -3,9 +3,9 @@ package Phase1.Server;
 import java.awt.*;
 
 
-public class Main{
-    public static ServerForm    serverForm    = new ServerForm();
-    public static SocketHandler socketHandler = new SocketHandler();
+public class ServerRunner {
+    public static ServerForm         serverForm         = new ServerForm();
+    public static ServerSocketDriver serverSocketDriver = new ServerSocketDriver();
     
     public static void main(String[] args){
         EventQueue.invokeLater(new Runnable(){
