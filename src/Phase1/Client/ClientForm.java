@@ -3,68 +3,59 @@ package Phase1.Client;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionListener;
-
-import static Phase1.Client.Main.socketHandler;
-
 
 public class ClientForm {
+    private String message;
     // Generated using JFormDesigner Evaluation license - Hatef
-    private JFrame      frame;
-    private JScrollPane scrollPane1;
-    private JTextArea   txtLog;
-    private JScrollPane scrollPane2;
-    private JTextField  txtInput;
-    private JButton     btnSend;
+    private JFrame              frame;
+    private JScrollPane         scrollPane1;
+    private JTextArea           txtLog;
+    private JScrollPane         scrollPane2;
+    private JTextField          txtInput;
+    private JButton             btnSend;
+    private ClientSocketHandler clientSocketHandler;
     
-    //constructor
-    public ClientForm() {
+    public ClientForm(ClientSocketHandler handler) {
+        this.clientSocketHandler = handler;
         initComponents();
+        
     }
-    
-    //End of constructor
     
     // Send button clicked
     private void btnSendActionPerformed(ActionEvent e) {
-        Thread newThread = socketHandler;
-        newThread.start();
-        //refresh log window first
-        socketHandler.getMessage();
-        //Now send the message to server
-        socketHandler.sendMessage(txtInput.getText());
-        
+        message = clientSocketHandler.sendMessage(txtInput.getText());
+        display("Me: " + message + "\n");
     }
     
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Hatef
-        this.frame = new JFrame();
+        this.frame       = new JFrame();
         this.scrollPane1 = new JScrollPane();
-        this.txtLog = new JTextArea();
+        this.txtLog      = new JTextArea();
         this.scrollPane2 = new JScrollPane();
-        this.txtInput = new JTextField();
-        this.txtInput.setEnabled(false);
+        this.txtInput    = new JTextField();
+        this.txtInput.setEnabled(true);
         this.btnSend = new JButton();
         this.frame.setTitle("Client");
-        this.frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         Container ClientFormContentPane = this.frame.getContentPane();
-        this.frame.addMouseMotionListener(new MouseMotionListener() {
+    /*    this.frame.addMouseMotionListener(new MouseMotionListener() {
             @Override
             public void mouseDragged(MouseEvent e) {
             }
             
             @Override
             public void mouseMoved(MouseEvent e) {
-                socketHandler.getMessage();
+               message = clientSocketHandler.getMessage();
+               display(message);
             }
-        });
-        
+        });*/
         this.txtLog.setEditable(false);
         this.scrollPane1.setViewportView(this.txtLog);
         this.btnSend.setText("Send");
-        this.btnSend.setEnabled(false);
-        this.btnSend.addActionListener(e -> btnSendActionPerformed(e));
+        this.btnSend.setEnabled(true);
+        this.btnSend.addActionListener(e ->btnSendActionPerformed(e));
         GroupLayout ClientFormContentPaneLayout = new GroupLayout(ClientFormContentPane);
         ClientFormContentPane.setLayout(ClientFormContentPaneLayout);
         ClientFormContentPaneLayout.setHorizontalGroup(ClientFormContentPaneLayout.createParallelGroup().addGroup(
@@ -84,22 +75,34 @@ public class ClientForm {
                                                 this.scrollPane1, GroupLayout.PREFERRED_SIZE, 587,
                                                 GroupLayout.PREFERRED_SIZE)))).addContainerGap(81, Short.MAX_VALUE)));
         ClientFormContentPaneLayout.setVerticalGroup(ClientFormContentPaneLayout.createParallelGroup().addGroup(
-                ClientFormContentPaneLayout.createSequentialGroup().addGap(41, 41, 41).addComponent(this.scrollPane1,
-                                                                                                    GroupLayout.PREFERRED_SIZE,
-                                                                                                    395,
-                                                                                                    GroupLayout.PREFERRED_SIZE).addPreferredGap(
-                        LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE).addGroup(
-                        ClientFormContentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(
-                                this.txtInput, GroupLayout.PREFERRED_SIZE, 44,
-                                GroupLayout.PREFERRED_SIZE).addComponent(this.btnSend, GroupLayout.PREFERRED_SIZE,
-                                                                         51,
-                                                                         GroupLayout.PREFERRED_SIZE)).addPreferredGap(
-                        LayoutStyle.ComponentPlacement.RELATED).addComponent(this.scrollPane2,
-                                                                             GroupLayout.PREFERRED_SIZE,
-                                                                             GroupLayout.DEFAULT_SIZE,
-                                                                             GroupLayout.PREFERRED_SIZE).addGap(22,
-                                                                                                                22,
-                                                                                                                22)));
+                ClientFormContentPaneLayout.createSequentialGroup()
+                                           .addGap(41, 41, 41)
+                                           .addComponent(this.scrollPane1,
+                                                         GroupLayout.PREFERRED_SIZE,
+                                                         395,
+                                                         GroupLayout.PREFERRED_SIZE)
+                                           .addPreferredGap(
+                                                   LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                                           .addGroup(
+                                                   ClientFormContentPaneLayout.createParallelGroup(
+                                                           GroupLayout.Alignment.BASELINE)
+                                                                              .addComponent(
+                                                                                      this.txtInput,
+                                                                                      GroupLayout.PREFERRED_SIZE, 44,
+                                                                                      GroupLayout.PREFERRED_SIZE)
+                                                                              .addComponent(this.btnSend,
+                                                                                            GroupLayout.PREFERRED_SIZE,
+                                                                                            51,
+                                                                                            GroupLayout.PREFERRED_SIZE))
+                                           .addPreferredGap(
+                                                   LayoutStyle.ComponentPlacement.RELATED)
+                                           .addComponent(this.scrollPane2,
+                                                         GroupLayout.PREFERRED_SIZE,
+                                                         GroupLayout.DEFAULT_SIZE,
+                                                         GroupLayout.PREFERRED_SIZE)
+                                           .addGap(22,
+                                                   22,
+                                                   22)));
         this.frame.pack();
         this.frame.setLocationRelativeTo(this.frame.getOwner());
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
@@ -115,31 +118,8 @@ public class ClientForm {
         return frame;
     }
     
-    public void setFrame(JFrame frame) {
-        this.frame = frame;
-    }
     
     public JTextArea getTxtLog() {
         return txtLog;
-    }
-    
-    public void setTxtLog(JTextArea txtLog) {
-        this.txtLog = txtLog;
-    }
-    
-    public JTextField getTxtInput() {
-        return txtInput;
-    }
-    
-    public void setTxtInput(JTextField txtInput) {
-        this.txtInput = txtInput;
-    }
-    
-    public JButton getBtnSend() {
-        return btnSend;
-    }
-    
-    public void setBtnSend(JButton btnSend) {
-        this.btnSend = btnSend;
     }
 }

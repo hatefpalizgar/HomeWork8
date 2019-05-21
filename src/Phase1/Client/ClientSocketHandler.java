@@ -3,67 +3,69 @@ package Phase1.Client;
 import java.io.*;
 import java.net.Socket;
 
-import static Phase1.Client.ClientRunner.clientForm;
-
 
 public class ClientSocketHandler {
-    InputStream       is;
-    OutputStream      os;
-    InputStreamReader reader;
-    BufferedReader    br;
-    private Socket server;
+    private InputStreamReader  reader;
+    private OutputStreamWriter writer;
+    private Socket             server;
+    private String             message;
+    private String             output;
     
-    public void sendMessage(String string) {
+    
+    public String sendMessage(String string) {
         try {
-            OutputStreamWriter writer = new OutputStreamWriter(os);
-            BufferedWriter     bw     = new BufferedWriter(writer);
+            BufferedWriter bw = new BufferedWriter(writer);
             bw.write(string + "\n");
             bw.flush();
-            clientForm.display("Me: " + string + "\n");
         }
         catch (Exception e) {
-            clientForm.display("Error sending message to server, check your connection\n ");
+            //TODO: give a good message
+            e.printStackTrace();
+        }
+        finally {
+            return string;
         }
     }
     
-    public void getMessage() {
+    public String getMessage() {
         if (server.isClosed() || server == null) {
-            clientForm.display("Server disconnected\n");
-            return;
+            message = "Server disconnected\n";
+            return message;
         }
         try {
-            reader = new InputStreamReader(is);
-
-            if (is.available() != 0) {
-                br = new BufferedReader(reader);
-                String message;
-                message = br.readLine();
-                clientForm.display("Server: " + message + "\n");
-            }
+            BufferedReader br = new BufferedReader(reader);
+            message = "Server: " + br.readLine() + "\n";
+            //TODO
+            /*reader.close();
+            br.close;*/
         }
         catch (Exception e) {
             e.printStackTrace();
             System.out.println("no line to read from server\n");
         }
+        return message;
     }
     
     // establish connection to server
-    public void establishConnection() {
+    public String establishConnection() {
         try {
-            server = new Socket("localhost", 46857); //server ip: 10.211.55.4  port:46857
-            clientForm.display(
-                    "Connected to server: " + server.getLocalAddress().toString() + " port:" + server.getLocalPort() +
-                    "\n");
-            is = server.getInputStream();//for reading data
-            os = server.getOutputStream();//for writing the data
-            {
-                clientForm.getTxtInput().setEnabled(true);
-                clientForm.getBtnSend().setEnabled(true);
-            }
+            server  = new Socket("localhost", 46857); //server ip: 10.211.55.4  port:46857
+            message =
+                    ("Connected to server: " + server.getLocalAddress().toString() + " port:" + server.getLocalPort() +
+                     "\n");
+            InputStream  is = server.getInputStream();//for reading data
+            OutputStream os = server.getOutputStream();//for writing the data
+            writer = new OutputStreamWriter(os);
+            reader = new InputStreamReader(is);
         }
         catch (Exception e) {
-            clientForm.display("Server is down. check it. Establish was unsuccessful");
+            message = ("Server is down. check it. Establish was unsuccessful");
         }
+        return message;
+    }
+    
+    public String getOutput() {
+        return output;
     }
 }
 
