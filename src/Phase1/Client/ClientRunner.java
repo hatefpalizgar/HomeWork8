@@ -3,9 +3,9 @@ package Phase1.Client;
 import java.awt.*;
 
 
-public class Main {
-    public static ClientForm    clientForm = new ClientForm();
-    public static SocketHandler socketHandler = new SocketHandler();
+public class ClientRunner {
+    public static ClientForm          clientForm          = new ClientForm();
+    public static ClientSocketHandler clientSocketHandler = new ClientSocketHandler();
     
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
@@ -14,7 +14,7 @@ public class Main {
                     clientForm = new ClientForm();
                     clientForm.getFrame().setVisible(true);
                     clientForm.display("Connecting to server.....\n");
-                    socketHandler.establishConnection();
+                    clientSocketHandler.establishConnection();
     
                 } catch (Exception e) {
                     e.printStackTrace();
