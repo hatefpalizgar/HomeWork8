@@ -1,76 +1,78 @@
 package Phase1.Server;
 
+import Phase1.Client.ClientRunner;
+
 import java.io.*;
 import java.net.Socket;
 
 import static Phase1.Server.ServerRunner.serverForm;
 
-public class SocketProcessor extends Thread {
+public class SocketProcessor extends Thread
+    {
     private InputStreamReader  reader;
     private BufferedReader     br;
     private BufferedWriter     bw;
     private OutputStreamWriter writer;
-    
+    private String             string;
     
     private Socket       receivedSocket;
     private InputStream  is;
     private OutputStream os;
     
-    public SocketProcessor(Socket receivedSocket, InputStream is, OutputStream os) {
-        this.receivedSocket = receivedSocket;
-        this.is             = is;
-        this.os             = os;
-    }
+    public SocketProcessor(Socket receivedSocket, InputStream is, OutputStream os)
+        {
+            this.receivedSocket = receivedSocket;
+            this.is             = is;
+            this.os             = os;
+        }
     
+    /* accept() has received a client request on its port */
     @Override
-    public void run() {
-        processSocket(receivedSocket);
-    }
+    public void run()
+        {
+            //TODO: correct display name below
+            serverForm.display(
+                    "Client connected: " + receivedSocket.getInetAddress() + " " + receivedSocket.toString() + "\n");
+            readSocket();
+        }
     
-    public void processSocket(Socket socket) {
-        serverForm.display(
-                "Client connected: " + socket.getInetAddress() + " " + socket.toString() + "\n");
-    }
+    public void readSocket()
+        {
+            while (true)
+                {
+                    try
+                        {
+                            reader = new InputStreamReader(is);
+                            br     = new BufferedReader(reader);
+                            String message;
+                            message = br.readLine();
+                            //TODO add client name in display
+                            serverForm.display(message);
+                        }
+                    catch (IOException e)
+                        {
+                            System.out.println("no line to read from");
+                            e.printStackTrace();
+                        }
+                }
+        }
     
-    
-    public void sendMessage(String string) {
-        if (receivedSocket == null) {
-            serverForm.display("client disconnected\n");
-            return;
-        }
-        writer = new OutputStreamWriter(os);
-        bw     = new BufferedWriter(writer);
-        try {
-            bw.write(string + "\n");
-            serverForm.display("Me: " + string + "\n");
-            bw.flush();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-            serverForm.getTxtLog().setText("Client Not Available");
-        }
-    }
-    
-    public void getMessage() {
-        //TODO:REMOVE IF UNNECESSARY
-        if (receivedSocket == null) {
-            serverForm.display("client disconnected\n");
-            return;
-        }
-        try {
-            reader = new InputStreamReader(is);
-            br     = new BufferedReader(reader);
-            String message;
-            //check if we have input Stream
-            if (is.available() != 0) {
-                message = br.readLine();
-                serverForm.display("Client: " + message + "\n");
-                br.close();
-            }
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("no line to read from client");
+    public void writeSocket(String string)
+        {
+            writer = new OutputStreamWriter(os);
+            bw     = new BufferedWriter(writer);
+            try
+                {
+                    bw.write(string);
+                    serverForm.display("Me: " + string);
+                    //TODO: correct display()
+                    ClientRunner.getClientForm().display("????:" + string);
+                    bw.flush();
+                }
+            catch (IOException e)
+                {
+                    e.printStackTrace();
+                    serverForm.getTxtLog().setText("stream is not available");
+                }
         }
     }
-}
